@@ -12,8 +12,8 @@ import { PostHogProvider } from '@posthog/react' // +
 // Here the App component is being rendered in the browser and we have most of the functionality in the App component
 
 
-posthog.init(import.meta.env.VITE_PUBLIC_POSTHOG_TOKEN, { // +
-  api_host: import.meta.env.VITE_PUBLIC_POSTHOG_HOST, // +
+posthog.init('phc_1wEyra80RwWY5khoZFIguVohlSnZxnYImYgS2bCiYus', { // +
+  api_host: 'https://us.i.posthog.com', // +
   defaults: '2026-01-30', // +
 }); // +
 
