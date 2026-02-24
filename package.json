@@ -9,8 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@dataconnect/generated": "file:src/dataconnect-generated",
     "@posthog/react": "^1.8.0",
     "axios": "^1.13.2",
+    "firebase": "^12.9.0",
     "mixpanel-browser": "^2.74.0",
     "posthog-js": "^1.353.0",
     "react": "^19.2.3",
