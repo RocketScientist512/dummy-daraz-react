@@ -1,5 +1,6 @@
 import "./Cart.css";
 
+
 const Cart = ({
   cartItems,
   addToCart,
@@ -11,6 +12,18 @@ const Cart = ({
     (price, item) => price + item.qty * item.price,
     0
   );
+
+    const handleAddToCart = () => {
+      // Pass the event and relevant data
+      trackEvent('add_to_cart', {
+        product_id: product.id,
+        product_name: product.title,
+        price: product.price,
+        category: product.category
+      });
+    };
+  
+
   return (
     <>
       <section className="cart-items">
@@ -65,6 +78,7 @@ const Cart = ({
                     </div>
                   </div>
                   <div className="cart-item-price"></div>
+                  
                 </div>
               );
             })}
@@ -75,12 +89,15 @@ const Cart = ({
               <h4>Total Price :</h4>
               <h3>${totalPrice}.00</h3>
             </div>
-            <button className="checkout" onClick={() => checkOut(cartItems)}>
+            <button className="checkout" onClick={({handleAddToCart}) => checkOut(cartItems)}>
               Checkout Now!
             </button>
           </div>
         </div>
       </section>
+      
+      
+
     </>
   );
 };

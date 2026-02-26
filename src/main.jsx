@@ -18,6 +18,22 @@ posthog.init('phc_1wEyra80RwWY5khoZFIguVohlSnZxnYImYgS2bCiYus', { // +
 }); // +
 
 
+// Add the code below to the root of your React app.
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { LDProvider } from 'launchdarkly-react-client-sdk';
+
+function App() {
+  return <div>Let your feature flags fly!</div>
+}
+
+// A "context" is a data object representing users, devices, organizations, and other entities.
+const context = {
+  kind: 'user',
+  key: '1',
+  email: 'rohan.shorey@thatoptimisticguy.com',
+};
+
  
 // Near entry of your product, init Mixpanel
 mixpanel.init("6a1edb579d0a5434b319c56eb434184f", {
@@ -60,9 +76,11 @@ const analytics = getAnalytics(app);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
+    <LDProvider clientSideID="66ec03c575d43c104d4e47d1" context={context}>
     <PostHogProvider client={posthog}>
       <App />
       </PostHogProvider>
+      </LDProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
