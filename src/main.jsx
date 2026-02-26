@@ -9,6 +9,7 @@ import mixpanel from "mixpanel-browser";
 import './index.css'
 import posthog from 'posthog-js'; 
 import { PostHogProvider } from '@posthog/react' // +
+import { LDProvider } from 'launchdarkly-react-client-sdk';
 // Here the App component is being rendered in the browser and we have most of the functionality in the App component
 
 
@@ -19,14 +20,6 @@ posthog.init('phc_1wEyra80RwWY5khoZFIguVohlSnZxnYImYgS2bCiYus', { // +
 
 
 // Add the code below to the root of your React app.
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import { LDProvider } from 'launchdarkly-react-client-sdk';
-
-function App() {
-  return <div>Let your feature flags fly!</div>
-}
-
 // A "context" is a data object representing users, devices, organizations, and other entities.
 const context = {
   kind: 'user',
