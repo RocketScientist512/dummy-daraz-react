@@ -9,7 +9,6 @@ import mixpanel from "mixpanel-browser";
 import './index.css'
 import posthog from 'posthog-js'; 
 import { PostHogProvider } from '@posthog/react' // +
-import { LDProvider } from 'launchdarkly-react-client-sdk';
 // Here the App component is being rendered in the browser and we have most of the functionality in the App component
 
 
@@ -18,14 +17,6 @@ posthog.init('phc_1wEyra80RwWY5khoZFIguVohlSnZxnYImYgS2bCiYus', { // +
   defaults: '2026-01-30', // +
 }); // +
 
-
-// Add the code below to the root of your React app.
-// A "context" is a data object representing users, devices, organizations, and other entities.
-const context = {
-  kind: 'user',
-  key: '1',
-  email: 'rohan.shorey@thatoptimisticguy.com',
-};
 
  
 // Near entry of your product, init Mixpanel
@@ -69,11 +60,9 @@ const analytics = getAnalytics(app);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-    <LDProvider clientSideID="66ec03c575d43c104d4e47d1" context={context}>
     <PostHogProvider client={posthog}>
       <App />
       </PostHogProvider>
-      </LDProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

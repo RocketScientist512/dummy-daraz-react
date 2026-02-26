@@ -2,11 +2,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 import "./loginform.css";
+import mixpanel from "mixpanel-browser";
 
 const Loginform = () => {
   function handleLogin(event) {
     event.preventDefault();
-    return toast.error("Login functionality is not live yet");
+    //return toast.error("Login functionality is not live yet");
+    mixpanel.track('Login', {
+      'event': 'click',
+      'username': event.target.name.value,
+      'password': event.target.password.value
+    })
+    console.log(event.target.name.value, event.target.password.value);
   }
 
   return (

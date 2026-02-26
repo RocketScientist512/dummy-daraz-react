@@ -1,6 +1,16 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import "./singleproduct.css";
+import mixpanel from "mixpanel-browser";
+
+function handleClick() {
+  mixpanel.track('Add to Cart', {
+    'event': 'Add to Cart',
+    'product': "watch",
+    'price': "$40"
+  })
+  console.log("button clicked");
+}
 
 const Singleproduct = ({ allProductsData, addToCart }) => {
   let id = useParams();
@@ -33,7 +43,7 @@ const Singleproduct = ({ allProductsData, addToCart }) => {
                   <button
                     aria-label="Add to cart"
                     className="cart-add-btn"
-                    onClick={() => addToCart(product)}
+                    onClick={handleClick}
                   >
                     Add To Cart
                   </button>
