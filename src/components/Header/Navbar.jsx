@@ -10,7 +10,7 @@ const Navbar = () => {
         <div className="menu-items">
           <div className="categories">
             <span className="fa-solid fa-border-all"></span>
-            <h4 className="head-categories">One Place To Buy Everything</h4>
+            <h4 className="head-categories">You're the best</h4>
           </div>
           <ul
             className={
