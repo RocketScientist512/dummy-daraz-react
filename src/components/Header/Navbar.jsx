@@ -1,12 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useFeatureFlagEnabled } from 'posthog-js/react'
-
-function App() {
-    const flagEnabled = useFeatureFlagEnabled('text-update')
-
-    if (flagEnabled) {
-        // do something
 
   const Navbar = () => {
     const [mobileMenu, setMobileMenu] = useState(false);
@@ -76,7 +69,6 @@ function App() {
       </>
     );
   };
-}
-}
+
 
 export default Navbar;

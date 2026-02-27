@@ -6,6 +6,7 @@ import ShopData from "./components/Shop/shopData";
 import AllProductsData from "./components/Allproducts/allProductsData";
 import toast, { Toaster } from "react-hot-toast";
 import "./App.css";
+import { useFeatureFlagEnabled } from 'posthog-js/react'
 
 function App() {
   // pulling data from data files & storing it in variables here
@@ -14,6 +15,13 @@ function App() {
   const { allProductsData } = AllProductsData;
   const navigate = useNavigate();
 
+  const flagEnabled = useFeatureFlagEnabled('text-update')
+
+  if (flagEnabled) {
+      // do something
+      alert("Posthog is running");
+      console.log("Posthog is running")
+    }
   // using useState hooks to change and store items in  the cart here
   const [cartItems, setCartItems] = useState([]);
 
