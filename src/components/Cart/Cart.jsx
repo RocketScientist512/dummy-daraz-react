@@ -1,5 +1,5 @@
 import "./Cart.css";
-
+import { useTrackEvent , useVWOClient, useVWOContext} from "vwo-fme-react-sdk";
 
 const Cart = ({
   cartItems,
@@ -12,17 +12,6 @@ const Cart = ({
     (price, item) => price + item.qty * item.price,
     0
   );
-
-    const handleAddToCart = () => {
-      // Pass the event and relevant data
-      trackEvent('add_to_cart', {
-        product_id: product.id,
-        product_name: product.title,
-        price: product.price,
-        category: product.category
-      });
-    };
-  
 
   return (
     <>

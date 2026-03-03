@@ -40,3 +40,7 @@ $ yarn dev
 as vite has added a script stating dev builtin here it'll execute the script and start the dev server on - http://localhost:5173/.
 
 
+# sdk installation - timestamp till 2:30
+# Feature Flag installation
+- Posthog and VWO feature flags have been set up in 'App.jsx' under 'src'. 
+- Posthog event tracking has been setup in 'Cart.jsx' under 'Components'. 

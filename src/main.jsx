@@ -9,7 +9,9 @@ import mixpanel from "mixpanel-browser";
 import './index.css'
 import posthog from 'posthog-js'; 
 import { PostHogProvider } from '@posthog/react' // +
-// Here the App component is being rendered in the browser and we have most of the functionality in the App component
+// Import the SDK
+import { VWOProvider } from 'vwo-fme-react-sdk';
+
 
 
 posthog.init('phc_1wEyra80RwWY5khoZFIguVohlSnZxnYImYgS2bCiYus', { // +
@@ -18,6 +20,17 @@ posthog.init('phc_1wEyra80RwWY5khoZFIguVohlSnZxnYImYgS2bCiYus', { // +
 }); // +
 
 
+
+
+const options = {
+  accountId: '1069944',
+  sdkKey: 'cd911fff4deab44325692a12aa5c564e',
+  logger:{level: 'debug'}
+};
+// Set User context
+const userContext = {
+  id: '1'
+};
  
 // Near entry of your product, init Mixpanel
 mixpanel.init("6a1edb579d0a5434b319c56eb434184f", {
@@ -60,9 +73,15 @@ const analytics = getAnalytics(app);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
+    <VWOProvider config={options} context={userContext}>
     <PostHogProvider client={posthog}>
       <App />
       </PostHogProvider>
+      </VWOProvider>
     </BrowserRouter>
   </React.StrictMode>
+
+  
 );
+
+
