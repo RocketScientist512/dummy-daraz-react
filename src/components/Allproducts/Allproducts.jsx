@@ -26,7 +26,7 @@ const variables = flag.getVariables();
         // Determine the application flow based on feature flag status
           if (isFeatureFlagEnabled) {
               // Your code when feature flag is enabled
-              alert("VWO Flag is running")
+              alert("This is for testing purposes")
           } else {
               // Your code when feature flag is disabled
               console.log("VWO Flag is not running")

@@ -29,7 +29,7 @@ const options = {
 };
 // Set User context
 const userContext = {
-  id: '1'
+  id: '2'
 };
  
 // Near entry of your product, init Mixpanel
@@ -73,7 +73,7 @@ const analytics = getAnalytics(app);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-    <VWOProvider config={options} context={userContext}>
+    <VWOProvider config={options} userContext={userContext}>
     <PostHogProvider client={posthog}>
       <App />
       </PostHogProvider>

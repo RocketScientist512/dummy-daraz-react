@@ -4,19 +4,19 @@ import "./singleproduct.css";
 import mixpanel from "mixpanel-browser";
 import { useTrackEvent } from "vwo-fme-react-sdk";
 
-function handleClick() {
+function handleClick(product) {
   mixpanel.track('Add to Cart', {
     'event': 'Add to Cart',
-    'product': "product.name",
-    'price': "product.price"
+    'product': product.name,
+    'price': product.price
   })
   console.log("mixpanel event executed");
     
         // Pass the event and relevant data
         useTrackEvent('add_to_cart', {
           product_id: "7",
-          product_name: "watch",
-          price: "$200",
+          product_name: product.name,
+          price: product.price,
           category: "apparel"
         });
     console.log("VWO Event Triggered");
@@ -73,7 +73,7 @@ const Singleproduct = ({ allProductsData, addToCart }) => {
                   <button
                     aria-label="Add to cart"
                     className="cart-add-btn"
-                    onClick={handleClick}
+                    onClick={()=>handleClick(product)}
                   >
                     Add To Cart
                   </button>
