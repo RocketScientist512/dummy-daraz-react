@@ -29,7 +29,7 @@ const options = {
 };
 // Set User context
 const userContext = {
-  id: '2'
+  id: '11'
 };
  
 // Near entry of your product, init Mixpanel

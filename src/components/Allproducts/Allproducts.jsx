@@ -10,7 +10,7 @@ const options = {
   sdkKey: 'cd911fff4deab44325692a12aa5c564e'
 };
 const userContext = {
-  id: '1'
+  id: '11'
 };
 
 const Allproducts = ({ allProductsData, addToCart }) => {

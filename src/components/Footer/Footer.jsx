@@ -5,22 +5,23 @@ import { useGetFlag, useGetFlagVariable, useGetFlagVariables } from 'vwo-fme-rea
 
 const options = {
   accountId: '1069944',
-  sdkKey: 'cd911fff4deab44325692a12aa5c564e'
+  sdkKey: 'aa34ef06e4e1f370f641e9f5f62ba840'
 };
 const userContext = {
-  id: '100'
+  id: '11'
 };
 
 
 const Footer = () => {
-  const { flag, isReady } = useGetFlag('key123', userContext);
-  if (!flag?.isEnabled()) {
-    
-    // To get value of a single variable
-const variable1 = useGetFlagVariable(flag, "defaulttext", "Try out our products");
+const { flag, isReady } = useGetFlag('key123', userContext);
+//   if (!flag?.isEnabled()) {
 
 // To get value of all variables as a list
 const variables = useGetFlagVariables(flag);
+//     // To get value of a single variable
+const variable1 = useGetFlagVariable(flag, "defaulttext", variables);
+console.log('aa34ef06e4e1f370f641e9f5f62ba840');
+
     return (    
       <footer className="footer-container">
         <div className="app-store-play">
@@ -91,8 +92,8 @@ const variables = useGetFlagVariables(flag);
     );
   };
 
-
-  }
+//}
+  
   
 
 export default Footer;
