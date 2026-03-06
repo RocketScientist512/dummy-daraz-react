@@ -44,3 +44,5 @@ as vite has added a script stating dev builtin here it'll execute the script and
 # Feature Flag installation
 - Posthog and VWO feature flags have been set up in 'App.jsx' under 'src'. 
 - Posthog event tracking has been setup in 'Cart.jsx' under 'Components'. 
+- VWO Feature Flag for key123, is setup in Allproducts.jsx This is react hook, so we load it in the functional component body. 
+- Testing has been implemented in the 'Footer' component. Replacing text in the bottom footer for with {variable1}. This is setup in the flag 'Alert all users', under 'Staging' and 'Testing and Personalize'. 

@@ -19,7 +19,7 @@ const { flag, isReady } = useGetFlag('key123', userContext);
 // To get value of all variables as a list
 const variables = useGetFlagVariables(flag);
 //     // To get value of a single variable
-const variable1 = useGetFlagVariable(flag, "defaulttext", variables);
+const variable1 = useGetFlagVariable(flag, 'defaulttext', variables);
 console.log('aa34ef06e4e1f370f641e9f5f62ba840');
 
     return (    
